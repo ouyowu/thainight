@@ -174,4 +174,3 @@ Prefer small commits with clear messages, especially for:
 - local secrets should stay out of git
 - production content quality depends on manual review, not raw auto-publish
 
-Git auto-deploy check: enabled on 2026-05-22.
