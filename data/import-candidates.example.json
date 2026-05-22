@@ -1,0 +1,30 @@
+[
+  {
+    "city": "bangkok",
+    "area_slug": "thonglor",
+    "source_type": "manual_research",
+    "source_name": "seed example",
+    "source_url": "https://example.com/venue",
+    "name": "Example Thonglor Bar",
+    "category": "cocktail-bar",
+    "address": "Thonglor, Bangkok",
+    "latitude": 13.7289,
+    "longitude": 100.5844,
+    "website": "https://example.com",
+    "opening_hours": "Daily: 6pm-2am",
+    "price_range": "฿฿฿",
+    "tags": ["cocktails", "date-night"],
+    "confidence_score": 7.5
+  },
+  {
+    "city": "pattaya",
+    "area_slug": "walking-street",
+    "source_type": "manual_research",
+    "source_name": "seed example",
+    "name": "Example Walking Street Club",
+    "category": "nightclub",
+    "address": "Walking Street, Pattaya",
+    "tags": ["club", "late-night"],
+    "confidence_score": 6.5
+  }
+]

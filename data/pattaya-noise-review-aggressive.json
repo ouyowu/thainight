@@ -1,0 +1,70 @@
+{
+  "city": "pattaya",
+  "mode": "aggressive_candidates_only",
+  "source_total": 239,
+  "high_risk_count": 0,
+  "medium_risk_count": 5,
+  "high_risk": [],
+  "medium_risk": [
+    {
+      "name": "Python Bar",
+      "area": "walking-street",
+      "category": "cocktail-bar",
+      "rating": 3.0,
+      "reviews": 12,
+      "tourist_trap_risk": 4.31,
+      "placeId": "ChIJCcRwSACXAjER5inTdeYCHpg",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Play Girlz Sports Bar",
+      "area": "walking-street",
+      "category": "dive-bar",
+      "rating": 3.4,
+      "reviews": 11,
+      "tourist_trap_risk": 4.61,
+      "placeId": "ChIJVznALX-XAjERzdzAUTseQXc",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Barracuda Sky Gala",
+      "area": "central-pattaya",
+      "category": "rooftop-bar",
+      "rating": 3.8,
+      "reviews": 15,
+      "tourist_trap_risk": 4.6,
+      "placeId": "ChIJS3JEdQC9AjERf_8A9_zbJ9U",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Secrets – Pattaya",
+      "area": "central-pattaya",
+      "category": "rooftop-bar",
+      "rating": 3.8,
+      "reviews": 37,
+      "tourist_trap_risk": 4.13,
+      "placeId": "ChIJgfhnFtSXAjERtjD05AplRik",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "SKY Babylon Rooftop Cafe Pattaya",
+      "area": "north-pattaya",
+      "category": "rooftop-bar",
+      "rating": 3.5,
+      "reviews": 14,
+      "tourist_trap_risk": 3.35,
+      "placeId": "ChIJxbWse6C_AjERsUDifm4YWlo",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    }
+  ]
+}

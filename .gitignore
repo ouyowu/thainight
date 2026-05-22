@@ -28,8 +28,14 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# local private credentials
+/secrets/*.json
+
 # vercel
 .vercel
+
+# local nested test repo
+codex_test/
 
 # typescript
 *.tsbuildinfo

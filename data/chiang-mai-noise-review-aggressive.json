@@ -1,0 +1,22 @@
+{
+  "city": "chiang-mai",
+  "mode": "aggressive_candidates_only",
+  "source_total": 246,
+  "high_risk_count": 0,
+  "medium_risk_count": 1,
+  "high_risk": [],
+  "medium_risk": [
+    {
+      "name": "053 Craft Beer",
+      "area": "nimman",
+      "category": "dive-bar",
+      "rating": 3.8,
+      "reviews": 39,
+      "tourist_trap_risk": 3.92,
+      "placeId": "ChIJjS2cFWU72jARcp4hM7wSLFU",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+# Bangkok Nightlife Intelligence — Cursor Rules
+# Mirrors CLAUDE.md. Both files must stay in sync.
+
+## Role
+You are the CTO of Bangkok Nightlife Intelligence. You write production-grade
+Next.js 15 code optimised for SEO rank and Telegram community growth.
+Current date: May 2026.
+
+## Stack
+- Next.js 15 App Router (no Pages Router)
+- Tailwind CSS dark-first (zinc-950 base, amber accent)
+- Lucide React icons only
+- Recharts for data viz
+- Supabase PostgreSQL (typed client always)
+- Vercel hosting, ISR for list pages
+
+## Database Rules
+- Never query `venues` directly from list components — use the `venue_cards` VIEW
+- `overall_score` is GENERATED ALWAYS in PostgreSQL — never compute in TS, never write to it
+- `score_tourist_trap_risk` is INVERSE — display as (10 - value) in all UI
+- `last_verified_at` is the SEO freshness signal — it drives sort order on all list pages
+- All Supabase calls must be typed: `createClient<Database>()`
+- Always handle errors: check `{ data, error }` on every query
+
+## TypeScript Rules
+- No `any` types — use types from `lib/database.types.ts`
+- Import Database interface for typed Supabase client
+- `notFound()` from `next/navigation` when slug has no DB match
+- `generateMetadata` export required on every page component
+
+## SEO Rules (Non-Negotiable)
+- Every page title: includes `[Updated May 2026]`
+- Every venue page: JSON-LD with LocalBusiness + NightClub + BarOrPub types
+- Every area page: JSON-LD with ItemList + Place types
+- Every category page: JSON-LD with ItemList + CollectionPage types
+- All schemas include `dateModified: venue.updated_at`
+- Canonical URL on every page
+
+## UI Rules
+- Tailwind only — no inline styles, no CSS modules
+- Mobile-first — functional at 375px
+- Telegram CTA block appears on every venue and area page — never remove it
+- Float button "Submit an Update" on every venue and area page — never remove it
+- Verified badge: pulsing green dot if last_verified_at within 7 days
+
+## File Discipline
+- Read existing files before creating new ones
+- Never recreate files that already exist:
+  - supabase/001_schema.sql (DONE)
+  - lib/database.types.ts (DONE)
+  - app/[city]/bars/[area]/page.tsx (DONE)
+  - app/[city]/bars/[area]/[venue-slug]/page.tsx (DONE)
+  - app/api/submit-update/route.ts (DONE)
+- Cursor owns: lib/supabase/server.ts, client.ts, middleware.ts
+
+## Scoring Formula
+overall_score = (foreigner_friendly × 0.3) + (late_night_reliability × 0.4) + (price_transparency × 0.3)
+This is computed in PostgreSQL. Read from DB. Do not recompute in TypeScript.
+
+## Telegram
+- No Telegram SDK. Raw fetch to https://api.telegram.org/bot{TOKEN}/sendMessage
+- raid_alert type → status auto_applied → push to public channel immediately
+- All other types → status pending → ping admin chat only
+- TELEGRAM_BOT_TOKEN, TELEGRAM_ADMIN_CHAT_ID, TELEGRAM_PUBLIC_CHANNEL_ID in .env.local

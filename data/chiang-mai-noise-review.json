@@ -1,0 +1,58 @@
+{
+  "city": "chiang-mai",
+  "generated_at": "2026-05-14",
+  "total_venues": 248,
+  "review_candidates": 2,
+  "candidates": [
+    {
+      "name": "Chatrium Hotel",
+      "city": "chiang-mai",
+      "area": "riverside",
+      "category": "cocktail-bar",
+      "rating": 3.7,
+      "reviews": 3,
+      "address": "28 Charoenkrung Road, Watprayakrai, Bangkholame, Bangkok 10120, Thailand",
+      "phone": "02 307 8888 ext. 1947",
+      "website": "https://www.chatrium.com/chatriumriversidebangkok/dining/pool-bar",
+      "placeId": "ChIJr1Chu7-Y4jARL-3StzJFOg0",
+      "scores": {
+        "score_foreigner_friendly": 7.56,
+        "score_solo_traveler": 6.97,
+        "score_date_night": 7.75,
+        "score_music_quality": 6.29,
+        "score_tourist_trap_risk": 4.84,
+        "score_price_transparency": 8.24,
+        "score_walkability": 8.01,
+        "score_late_night_reliability": 7.24
+      },
+      "exclude_reasons": [
+        "very_low_reviews_soft_nonbar_no_bar_context"
+      ]
+    },
+    {
+      "name": "Tipsy Cat Cafe - Chill & Cocktails - ほろ酔い猫カフェ",
+      "city": "chiang-mai",
+      "area": "santitham",
+      "category": "dive-bar",
+      "rating": 5,
+      "reviews": 4,
+      "address": "26 6 Thanon Ratchadamli, Tambon Chang Phueak, Muang, Chang Wat Chiang Mai 50300, Thailand",
+      "phone": "099 373 5623",
+      "website": "https://www.instagram.com/tipsy_cat_cafe",
+      "placeId": "ChIJl4g50yc72jARqxVO1aSK4Hk",
+      "scores": {
+        "score_foreigner_friendly": 6.57,
+        "score_solo_traveler": 8.61,
+        "score_date_night": 6.23,
+        "score_music_quality": 5.61,
+        "score_tourist_trap_risk": 3.23,
+        "score_price_transparency": 7.77,
+        "score_walkability": 7.18,
+        "score_late_night_reliability": 7.09
+      },
+      "exclude_reasons": [
+        "very_low_reviews_soft_nonbar_no_bar_context"
+      ]
+    }
+  ]
+}

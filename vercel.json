@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thainight.co"
+        }
+      ],
+      "destination": "https://thainight.co/$1",
+      "permanent": true
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/import-events",
+      "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/import-events",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/import-events",
+      "schedule": "0 14 * * *"
+    }
+  ]
+}

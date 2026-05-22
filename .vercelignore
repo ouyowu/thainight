@@ -1,0 +1,8 @@
+.env*
+.git
+.next
+node_modules
+secrets
+data/scrape-cache*.json
+*.log
+.DS_Store

@@ -1,0 +1,46 @@
+{
+  "city": "phuket",
+  "mode": "aggressive_candidates_only",
+  "source_total": 244,
+  "high_risk_count": 0,
+  "medium_risk_count": 3,
+  "high_risk": [],
+  "medium_risk": [
+    {
+      "name": "Skybar",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 3.7,
+      "reviews": 6,
+      "tourist_trap_risk": 3.48,
+      "placeId": "ChIJo39AJdg5UDARns10nmhDhos",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Cocoon APK Rooftop Lounge",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 3.7,
+      "reviews": 21,
+      "tourist_trap_risk": 3.48,
+      "placeId": "ChIJkb-ijWE7UDAR6Xa8KMFYzsU",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Hollywood Bar",
+      "area": "kata",
+      "category": "dive-bar",
+      "rating": 3.4,
+      "reviews": 46,
+      "tourist_trap_risk": 3.61,
+      "placeId": "ChIJmyHSCI8lUDARUkAV3GH2VAc",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    }
+  ]
+}

@@ -1,26 +1,50 @@
 {
-  "name": "bangkok-nightlife-guide",
+  "name": "thai-star-bridge",
   "version": "0.1.0",
   "private": true,
+  "description": "泰国明星活动中文日历MVP项目 - 面向中国大陆粉丝的泰国娱乐信息聚合与服务平台",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import:candidates": "node scripts/import-venue-candidates.mjs",
+    "enrich:places": "node scripts/enrich-google-places.mjs",
+    "enrich:places:dry": "node scripts/enrich-google-places.mjs --dry-run",
+    "backfill:galleries": "node scripts/backfill-venue-galleries.mjs",
+    "backfill:galleries:dry": "node scripts/backfill-venue-galleries.mjs --dry-run",
+    "photos:refresh": "node scripts/refresh-venue-photos.mjs",
+    "photos:refresh:dry": "node scripts/refresh-venue-photos.mjs --dry-run",
+    "social:refresh-hubs": "node scripts/refresh-social-hubs.mjs",
+    "events:scrape": "node scripts/scrape-events.mjs",
+    "events:scrape:dry": "node scripts/scrape-events.mjs --dry-run",
+    "normalize:socials": "node scripts/normalize-social-contacts.mjs",
+    "normalize:socials:dry": "node scripts/normalize-social-contacts.mjs --dry-run",
+    "gsc:auth": "node scripts/gsc-auth.mjs",
+    "gsc:report": "node scripts/gsc-report.mjs"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^2.0.2",
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.105.4",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^1.14.0",
+    "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.35"
+    "recharts": "^3.8.1",
+    "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "typescript": "^5"
   }
 }

@@ -1,0 +1,596 @@
+{
+  "city": "phuket",
+  "generated_at": "2026-05-14",
+  "total_venues": 246,
+  "review_candidates": 53,
+  "candidates": [
+    {
+      "name": "Night Blooming Lounge",
+      "area": "patong",
+      "category": "nightclub",
+      "rating": 4.5,
+      "reviews": 4,
+      "placeId": "ChIJQW-SeJg6UDARJEBs9VHqjGY",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Khubani Rooftop Bar and Restaurant خوباني",
+      "area": "patong",
+      "category": "cocktail-bar",
+      "rating": 4.8,
+      "reviews": 1588,
+      "placeId": "ChIJ0Rg6KOI7UDARggUnLJXIQOU",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "UNIQUE Restaurant & Bar",
+      "area": "patong",
+      "category": "cocktail-bar",
+      "rating": 4.9,
+      "reviews": 116,
+      "placeId": "ChIJLZEJIAA7UDARlgnXd5-RNeM",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Molly’s Tavern Irish Bar & Restaurant",
+      "area": "patong",
+      "category": "jazz-bar",
+      "rating": 4.4,
+      "reviews": 1005,
+      "placeId": "ChIJMeR9MLo6UDARoqvhfZ_Wi3E",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "MIT’S BAR LIVE MUSIC & CAFE",
+      "area": "patong",
+      "category": "jazz-bar",
+      "rating": 4.8,
+      "reviews": 13,
+      "placeId": "ChIJc7lPYAA7UDARFcNBjbzNzns",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Showroom Patong - Sports Bar, Arcade, Restaurant",
+      "area": "patong",
+      "category": "dive-bar",
+      "rating": 4.7,
+      "reviews": 7,
+      "placeId": "ChIJcd8nKfc7UDAR5MtMajn6o2c",
+      "reasons": [
+        "name_keyword_non_bar_signal",
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "19th Floor Andaman Sky Lounge (Roof Top Bar and Restaurant)",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 4.6,
+      "reviews": 120,
+      "placeId": "ChIJS7NxZCY7UDARusD4ifLeas4",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Cocoon APK Rooftop Lounge",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 3.7,
+      "reviews": 21,
+      "placeId": "ChIJkb-ijWE7UDAR6Xa8KMFYzsU",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Sky Bar Patong",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 4,
+      "reviews": 1,
+      "placeId": "ChIJI3G3nC07UDARtWr-twB94tM",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "The Cloud Rooftop Pool Bar",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 4.8,
+      "reviews": 4,
+      "placeId": "ChIJfwQmGMw7UDARDohQwJqh-wY",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "The Surface Restaurant & Bar",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 4.2,
+      "reviews": 96,
+      "placeId": "ChIJMfSf-7w6UDAR0DzGfPFMW2E",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Sizzle Rooftop Restaurant",
+      "area": "patong",
+      "category": "rooftop-bar",
+      "rating": 4.5,
+      "reviews": 550,
+      "placeId": "ChIJlQJIus06UDARjeiTmjO6ggc",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "The Bar",
+      "area": "patong",
+      "category": "cocktail-bar",
+      "rating": 4.8,
+      "reviews": 4,
+      "placeId": "ChIJC5z7VPk7UDARxfwQbb9TkCQ",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Secret Bay Phuket Cafe",
+      "area": "patong",
+      "category": "cocktail-bar",
+      "rating": 4.3,
+      "reviews": 404,
+      "placeId": "ChIJu2dqwek7UDARWUooK93S7do",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Buddha Lounge & Bar",
+      "area": "patong",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 4,
+      "placeId": "ChIJPQeH92Y7UDARlHE9HBm_1sY",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Hidden Hub",
+      "area": "patong",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 5,
+      "placeId": "ChIJv38rDH47UDARLknm3DJrSAc",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "SKA BAR & Kata seafood Restaurant",
+      "area": "kata",
+      "category": "dive-bar",
+      "rating": 4.4,
+      "reviews": 1425,
+      "placeId": "ChIJqVM-Z40lUDARMXv_t-xrr3M",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "At Beach Bar & Restaurant - Kata",
+      "area": "kata",
+      "category": "dive-bar",
+      "rating": 3.8,
+      "reviews": 250,
+      "placeId": "ChIJS65B4gQlUDARb0S797A7t5s",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Sunlique Rooftop Restaurant",
+      "area": "kata",
+      "category": "dive-bar",
+      "rating": 4.7,
+      "reviews": 807,
+      "placeId": "ChIJoyNZTBElUDARqdHOrTY-mKY",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Mustache Bar & Restaurant",
+      "area": "kata",
+      "category": "dive-bar",
+      "rating": 4.8,
+      "reviews": 583,
+      "placeId": "ChIJCZsLJ7MlUDAR_335Idx18EE",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Hollywood Bar",
+      "area": "kata",
+      "category": "dive-bar",
+      "rating": 3.4,
+      "reviews": 46,
+      "placeId": "ChIJmyHSCI8lUDARUkAV3GH2VAc",
+      "reasons": [
+        "low_rating_low_reviews"
+      ]
+    },
+    {
+      "name": "Neptuna Cafe & Cocktail Bar",
+      "area": "kata",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 23,
+      "placeId": "ChIJdaEcjiQlUDAR8LWmqBflRVY",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "NOVA Bar&Restaurant",
+      "area": "kata",
+      "category": "cocktail-bar",
+      "rating": 4.9,
+      "reviews": 15,
+      "placeId": "ChIJwc7eTNElUDARgGBpejNICBE",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Sunset bar & restaurant",
+      "area": "kata",
+      "category": "cocktail-bar",
+      "rating": 4.5,
+      "reviews": 50,
+      "placeId": "ChIJReF_dtslUDAR9RnZa2RdLzU",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Starz Rooftop Bar & Restaurant",
+      "area": "kata",
+      "category": "cocktail-bar",
+      "rating": 4.8,
+      "reviews": 549,
+      "placeId": "ChIJE9SxlnElUDARwop4e60rY90",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Poët | Karaoke restaurant",
+      "area": "kata",
+      "category": "jazz-bar",
+      "rating": 4.7,
+      "reviews": 818,
+      "placeId": "ChIJIcSkZ6clUDARbVBBWN_wAnY",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Islander Sports Bar and Restaurant Rawai Phuket",
+      "area": "rawai",
+      "category": "dive-bar",
+      "rating": 4.6,
+      "reviews": 435,
+      "placeId": "ChIJoW9pL6UoUDARqojxZ6uIei0",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Hakuna Matata Bar & Restaurant",
+      "area": "rawai",
+      "category": "dive-bar",
+      "rating": 5,
+      "reviews": 78,
+      "placeId": "ChIJSaORfWopUDAR2NJ8XDXDx3w",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Friends Zone Cocktail Bar",
+      "area": "rawai",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 2,
+      "placeId": "ChIJKzdE4k0vUDARqQxlLPUas8Y",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Easy Bar",
+      "area": "rawai",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 6,
+      "placeId": "ChIJfawZFgApUDARt8U434-lDTM",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Lakeside Cafe & Bar",
+      "area": "rawai",
+      "category": "cocktail-bar",
+      "rating": 4.5,
+      "reviews": 59,
+      "placeId": "ChIJ5fzKSagoUDARC-ffBgnQ5SY",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Reyn's Bar & Restaurant",
+      "area": "rawai",
+      "category": "cocktail-bar",
+      "rating": 4.7,
+      "reviews": 179,
+      "placeId": "ChIJo-ulrjUvUDARUtNGoZmjQR4",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Breakers Sports & Draft Beer Restaurant Rawai",
+      "area": "rawai",
+      "category": "dive-bar",
+      "rating": 4.6,
+      "reviews": 83,
+      "placeId": "ChIJdbye84opUDAR2-sg88Cwcr4",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Red's Sports Cafe & Restaurant",
+      "area": "rawai",
+      "category": "dive-bar",
+      "rating": 5,
+      "reviews": 6,
+      "placeId": "ChIJM2RaMAApUDARGlZuRHSYwtQ",
+      "reasons": [
+        "name_keyword_non_bar_signal",
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Chalong Pier Restaurant & Sports Bar",
+      "area": "rawai",
+      "category": "dive-bar",
+      "rating": 4.6,
+      "reviews": 118,
+      "placeId": "ChIJzyXUM6AvUDAR3cvQwym24_U",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Chalong Pier Ale House",
+      "area": "chalong",
+      "category": "dive-bar",
+      "rating": 5,
+      "reviews": 1,
+      "placeId": "ChIJ-cbT8RQvUDAR1mkAWBR0ri0",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Thairish house cafe and bar",
+      "area": "chalong",
+      "category": "dive-bar",
+      "rating": 5,
+      "reviews": 7,
+      "placeId": "ChIJB1aNGnsvUDARi0NXBtpUhwk",
+      "reasons": [
+        "name_keyword_non_bar_signal",
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Sky bar & Restaurant",
+      "area": "chalong",
+      "category": "dive-bar",
+      "rating": 5,
+      "reviews": 2,
+      "placeId": "ChIJcVuhXvovUDAR4UYwUGY5jhM",
+      "reasons": [
+        "name_keyword_non_bar_signal",
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Tempo | Restaurant - Lounge - Karaoke",
+      "area": "chalong",
+      "category": "dive-bar",
+      "rating": 4.9,
+      "reviews": 108,
+      "placeId": "ChIJUxZJiXUvUDARPyTMp5cBhnE",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Neon Naka",
+      "area": "chalong",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 4,
+      "placeId": "ChIJP29bGhovUDARmh7qegtBSxo",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Kangaroo Bar Soi Ta-Eiad",
+      "area": "chalong",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 7,
+      "placeId": "ChIJbXsrdwAvUDAR-nvn_44-Afk",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Splash Bar",
+      "area": "chalong",
+      "category": "cocktail-bar",
+      "rating": 5,
+      "reviews": 1,
+      "placeId": "ChIJqYpMTwAvUDARq-_ROW8ipiI",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Parsley Restaurant & Music Phuket",
+      "area": "chalong",
+      "category": "jazz-bar",
+      "rating": 4.8,
+      "reviews": 156,
+      "placeId": "ChIJT6yVmbUxUDARBG8jYg4nePk",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "ATM Bar2",
+      "area": "chalong",
+      "category": "jazz-bar",
+      "rating": 4,
+      "reviews": 62,
+      "placeId": "ChIJr_M6wBovUDARMUt9pW41iTY",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Skybar",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 3.7,
+      "reviews": 6,
+      "placeId": "ChIJo39AJdg5UDARns10nmhDhos",
+      "reasons": [
+        "low_rating_low_reviews",
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "TWIST Rooftop Restaurant & Bar",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 4.7,
+      "reviews": 308,
+      "placeId": "ChIJr-VMnz4zUDARRsUk-7oNfbs",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Estrela Rooftop Bar & Restaurant",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 4.7,
+      "reviews": 334,
+      "placeId": "ChIJFzShFP8xUDARUdbdLBBVk_A",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "The Club at SAii Laguna Phuket",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 4.8,
+      "reviews": 4,
+      "placeId": "ChIJTcKLy7g5UDAR1DgwFatpk2w",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "Smigo's Bar & Restaurant",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 4.7,
+      "reviews": 1690,
+      "placeId": "ChIJ5y6Acw9JUDARbr_AROdtXbA",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Minimal Sunset Party",
+      "area": "laguna",
+      "category": "rooftop-bar",
+      "rating": 5,
+      "reviews": 1,
+      "placeId": "ChIJgeCWG6M5UDARXJIyal0-hbA",
+      "reasons": [
+        "very_few_reviews"
+      ]
+    },
+    {
+      "name": "SALTY restaurant",
+      "area": "laguna",
+      "category": "cocktail-bar",
+      "rating": 4.7,
+      "reviews": 174,
+      "placeId": "ChIJY9cBgas5UDARsij3CNeSeUU",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Big Bump Bar and Restaurant",
+      "area": "laguna",
+      "category": "cocktail-bar",
+      "rating": 4.5,
+      "reviews": 128,
+      "placeId": "ChIJ97_jUWs5UDAR6hxyRLpdTLg",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    },
+    {
+      "name": "Moonshine | Restaurant, Lounge & Jazz Bar",
+      "area": "laguna",
+      "category": "cocktail-bar",
+      "rating": 4.8,
+      "reviews": 128,
+      "placeId": "ChIJywwal-o5UDARHuYP1QnKxtQ",
+      "reasons": [
+        "name_keyword_non_bar_signal"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-05-15T12:46:00.424Z",
+  "site": "sc-domain:thainight.co",
+  "range": {
+    "start_date": "2026-05-02",
+    "end_date": "2026-05-15",
+    "days": 14
+  },
+  "trend_range": {
+    "start_date": "2026-04-18",
+    "end_date": "2026-05-15",
+    "days": 28
+  },
+  "performance": {
+    "top_queries": [],
+    "top_pages": [
+      {
+        "keys": [
+          "http://thainight.co/"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      }
+    ],
+    "by_country": [
+      {
+        "keys": [
+          "sgp"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "tha"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      }
+    ],
+    "by_device": [
+      {
+        "keys": [
+          "DESKTOP"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      }
+    ],
+    "daily_trend": [
+      {
+        "keys": [
+          "2026-05-12"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-05-13"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      }
+    ]
+  },
+  "sitemaps": [
+    {
+      "path": "https://thainight.co/sitemap.xml",
+      "lastSubmitted": "2026-05-13T16:40:23.887Z",
+      "isPending": false,
+      "isSitemapsIndex": false,
+      "type": "sitemap",
+      "lastDownloaded": "2026-05-14T20:15:29.572Z",
+      "warnings": "0",
+      "errors": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "1066",
+          "indexed": "0"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Search Console API exposes search performance + sitemap status.",
+    "Index Coverage detail is not fully exposed in public API; use GSC UI for full coverage diagnostics."
+  ],
+  "weekly_change": {
+    "period_days": 7,
+    "data_points": {
+      "recent": 2,
+      "previous": 0
+    },
+    "clicks": {
+      "recent": 0,
+      "previous": 0,
+      "delta": 0,
+      "delta_pct": 0
+    },
+    "impressions": {
+      "recent": 2,
+      "previous": 0,
+      "delta": 2,
+      "delta_pct": null
+    },
+    "avg_position": {
+      "recent": 8.5,
+      "previous": 0,
+      "delta": 8.5,
+      "delta_pct": null,
+      "note": "Lower average position is better."
+    }
+  }
+}
