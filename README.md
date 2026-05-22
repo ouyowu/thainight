@@ -138,6 +138,36 @@ GitHub repository:
 
 - `https://github.com/ouyowu/thainight`
 
+## Collaboration
+
+If someone else needs to work on this project, they should follow this order:
+
+1. clone the repository
+2. copy `.env.example` to `.env.local`
+3. install dependencies with `npm install`
+4. run `npm run dev`
+5. verify the admin route and at least one city page before changing import logic
+
+When changing import or admin queue behavior:
+
+- run `npm run lint`
+- run `npm run build`
+- verify `/api/cron/import-events`
+- check pending ordering in `/admin`
+
+Do not commit:
+
+- `.env.local`
+- private JSON credentials
+- local machine-only test repos
+
+Prefer small commits with clear messages, especially for:
+
+- import pipeline changes
+- Supabase migration changes
+- SEO page generation
+- admin moderation workflow
+
 ## Notes
 
 - `codex_test/` is intentionally ignored as a local nested test repo
