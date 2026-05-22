@@ -1,16 +1,49 @@
 # ThaiNight
 
-ThaiNight is a Thailand nightlife discovery platform focused on:
+ThaiNight is a Thailand nightlife discovery platform for travelers who want to decide where to go out tonight, what to avoid, and which events or offers are worth attention.
 
-- tonight events
-- approved offers
-- nightlife intel and warnings
-- city nightlife guides
-- solo traveler / going-out context
-
-The current production domain is:
+Live site:
 
 - `https://thainight.co`
+
+Repository:
+
+- `https://github.com/ouyowu/thainight`
+
+## What the product does
+
+ThaiNight combines nightlife content, event discovery, and review workflows into one site:
+
+- tonight events by city
+- approved bar and club offers
+- nightlife warnings and price tips
+- city nightlife guides
+- solo traveler / going-out context
+- admin moderation for imported nightlife signals
+
+## Main product areas
+
+Public pages:
+
+- `/`
+- `/tonight`
+- `/intel`
+- `/news`
+- `/offers`
+- `/events`
+- `/bangkok`
+- `/pattaya`
+- `/phuket`
+- `/chiang-mai`
+
+Admin / internal routes:
+
+- `/admin?key=YOUR_ADMIN_SECRET_KEY`
+- `GET /api/cron/import-events`
+- `POST /api/admin-intel`
+- `POST /api/admin-signal`
+- `POST /api/admin-verification`
+- `GET /api/thainight/intelligence`
 
 ## Stack
 
@@ -20,13 +53,34 @@ The current production domain is:
 - Supabase
 - Vercel
 
-## Core areas
+## Import and review model
 
-- Public site pages for Bangkok, Pattaya, Phuket, and Chiang Mai
-- Admin review queue for pending event flyers, offers, and intel
-- Cron-driven event import pipeline
-- RSS / nightlife source ingestion
-- SEO landing pages for nightlife search intent
+ThaiNight does not treat raw imports as publish-ready content.
+
+Current workflow:
+
+1. import events and offers from approved sources
+2. store candidates in pending queues
+3. review in admin
+4. approve only the items worth showing publicly
+
+The production import route is:
+
+- `GET /api/cron/import-events`
+
+Current import behavior:
+
+- discovers event URLs from approved source pages
+- parses event metadata
+- upserts `event_flyers`
+- extracts offer candidates into `venue_offers`
+- imports RSS items into `intelligence_feed`
+
+Recent queue logic improvements:
+
+- pending queues sort by `updated_at` first
+- cron result distinguishes `inserted` vs `updated`
+- duplicate-history cases around `source_url` no longer assume a single-row match
 
 ## Local development
 
@@ -53,7 +107,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 ADMIN_SECRET_KEY=
 ```
 
-Optional import and automation variables:
+Optional import variables:
 
 ```bash
 EVENT_SOURCE_PAGES=
@@ -63,59 +117,6 @@ NIGHTLIFE_RSS_IMPORT_LIMIT=
 CRON_SECRET=
 ```
 
-## Important routes
-
-Public:
-
-- `/`
-- `/tonight`
-- `/intel`
-- `/news`
-- `/offers`
-- `/events`
-- `/bangkok`
-- `/pattaya`
-- `/phuket`
-- `/chiang-mai`
-
-Admin / API:
-
-- `/admin?key=YOUR_ADMIN_SECRET_KEY`
-- `GET /api/cron/import-events`
-- `POST /api/admin-intel`
-- `POST /api/admin-signal`
-- `POST /api/admin-verification`
-- `GET /api/thainight/intelligence`
-
-## Import pipeline
-
-The production import route is:
-
-- `GET /api/cron/import-events`
-
-Current behavior:
-
-- discovers event URLs from approved source pages
-- parses event metadata
-- upserts `event_flyers`
-- extracts offer candidates into `venue_offers`
-- imports RSS items into `intelligence_feed`
-
-Recent fix:
-
-- admin pending queues now sort by `updated_at` first
-- cron result now distinguishes inserted vs updated records
-- duplicate-history cases around `source_url` no longer rely on a single-row assumption
-
-## Admin review workflow
-
-Typical daily workflow:
-
-1. Open `/admin?key=...`
-2. Review `Pending Event Flyers`
-3. Review `Pending Offers`
-4. Move useful intel into openings / warnings / price tips as needed
-
 ## Build and validation
 
 ```bash
@@ -123,24 +124,34 @@ npm run lint
 npm run build
 ```
 
-## Deployment
+## Git and deployment
 
-This project is configured for Vercel and linked to the `thainight` Vercel project.
+The project is now connected to:
 
-Typical deployment options:
+- GitHub repository: `ouyowu/thainight`
+- Vercel project: `thainight`
 
-1. Push to GitHub and let Vercel deploy from the connected repository
-2. Deploy manually from the project root with Vercel CLI
+Pushes to `main` now trigger Vercel production deployments automatically.
 
-## Repository
+## CI
 
-GitHub repository:
+GitHub Actions runs on:
 
-- `https://github.com/ouyowu/thainight`
+- pushes to `main`
+- pull requests targeting `main`
 
-## Collaboration
+Current checks:
 
-If someone else needs to work on this project, they should follow this order:
+- `npm run lint`
+- `npm run build`
+
+Workflow file:
+
+- `.github/workflows/ci.yml`
+
+## Collaboration notes
+
+If someone else works on this project, they should:
 
 1. clone the repository
 2. copy `.env.example` to `.env.local`
@@ -159,9 +170,9 @@ Do not commit:
 
 - `.env.local`
 - private JSON credentials
-- local machine-only test repos
+- local machine-only nested repos
 
-Prefer small commits with clear messages, especially for:
+Prefer small commits for:
 
 - import pipeline changes
 - Supabase migration changes
@@ -171,6 +182,4 @@ Prefer small commits with clear messages, especially for:
 ## Notes
 
 - `codex_test/` is intentionally ignored as a local nested test repo
-- local secrets should stay out of git
 - production content quality depends on manual review, not raw auto-publish
-
