@@ -353,6 +353,11 @@ export default async function IntelPage() {
             description: "Best next step when a Bangkok signal should turn into a same-night area and event choice.",
           },
           {
+            href: "/bangkok-nightlife-safety",
+            label: "Bangkok safety",
+            description: "Use this when warnings, overcharge stories, or transport concerns should land on a dedicated Bangkok safety page.",
+          },
+          {
             href: "/pattaya-nightlife-tonight",
             label: "Pattaya tonight",
             description: "Use this when Walking Street, Soi Buakhao, or Pattaya pricing signals affect tonight's plan.",
@@ -361,6 +366,16 @@ export default async function IntelPage() {
             href: "/phuket-nightlife-tonight",
             label: "Phuket tonight",
             description: "A better handoff when Patong, Bangla Road, or beach-club intel changes a Phuket night.",
+          },
+          {
+            href: "/pattaya-nightlife-prices",
+            label: "Pattaya prices",
+            description: "A cleaner next step when Pattaya cost signals need to become a practical budget page.",
+          },
+          {
+            href: "/phuket-nightlife-prices",
+            label: "Phuket prices",
+            description: "Use this when beach-club spend, Patong pricing, or transport costs need a stronger landing page.",
           },
           {
             href: "/walking-street-pattaya-safety",
@@ -416,6 +431,11 @@ export default async function IntelPage() {
             href: "/phuket-nightlife-tonight",
             label: "Use a city-specific tonight page",
             description: "Better follow-up when the signal clearly belongs to a real city plan instead of a broad Thailand overview.",
+          },
+          {
+            href: "/bangkok-nightlife-first-time",
+            label: "Open a first-timer page",
+            description: "Useful when the reader is not just checking headlines, but still needs help choosing the right nightlife starting point.",
           },
           {
             href: "/news",
