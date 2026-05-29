@@ -71,6 +71,63 @@ const CITY_METADATA: Record<
   },
 };
 
+const CITY_INTENT_LINKS: Record<
+  string,
+  {
+    tonight: { href: string; label: string; description: string };
+    safety: { href: string; label: string; description: string };
+  }
+> = {
+  bangkok: {
+    tonight: {
+      href: "/bangkok-nightlife-tonight",
+      label: "Bangkok nightlife tonight",
+      description: "A faster same-night route for Soi 11, Thonglor, RCA, and event timing checks.",
+    },
+    safety: {
+      href: "/solo-traveler-bangkok-nightlife",
+      label: "Solo traveler Bangkok nightlife",
+      description: "Use this when the night plan is also about confidence, meeting people, and keeping transport simple.",
+    },
+  },
+  pattaya: {
+    tonight: {
+      href: "/pattaya-nightlife-tonight",
+      label: "Pattaya nightlife tonight",
+      description: "Same-night planning for Walking Street, Soi Buakhao, prices, and simple route choices.",
+    },
+    safety: {
+      href: "/walking-street-pattaya-safety",
+      label: "Walking Street Pattaya safety",
+      description: "Tourist-facing safety and pricing checks for Pattaya's best-known nightlife strip.",
+    },
+  },
+  phuket: {
+    tonight: {
+      href: "/phuket-nightlife-tonight",
+      label: "Phuket nightlife tonight",
+      description: "Use Patong, beach-club, and transport checks to keep a Phuket night practical.",
+    },
+    safety: {
+      href: "/phuket-bangla-road-safety",
+      label: "Phuket Bangla Road safety",
+      description: "The cleanest safety and late-night planning page for Patong and Bangla Road.",
+    },
+  },
+  "chiang-mai": {
+    tonight: {
+      href: "/chiang-mai-nightlife-tonight",
+      label: "Chiang Mai nightlife tonight",
+      description: "A calmer tonight planner for Nimman, Old City, riverside bars, and live music.",
+    },
+    safety: {
+      href: "/tonight",
+      label: "Thailand tonight planner",
+      description: "Use the broader tonight page when Chiang Mai nightlife is quieter and you need a simple overview.",
+    },
+  },
+};
+
 export function generateStaticParams() {
   return getCityStaticParams();
 }
@@ -219,6 +276,18 @@ export default async function CityPage({
 }) {
   const city = getCityConfig(params.city);
   if (!city) notFound();
+  const intentLinks = CITY_INTENT_LINKS[city.slug] ?? {
+    tonight: {
+      href: "/tonight",
+      label: "Tonight",
+      description: `Fast planning page for ${city.name} and the rest of Thailand.`,
+    },
+    safety: {
+      href: "/intel",
+      label: "Intel",
+      description: `Warnings, openings, and price notes that shape going out in ${city.name}.`,
+    },
+  };
 
   const [venues, signals, events, offers, safetyIntel, priceIntel, openingsIntel] = await Promise.all([
     getCityVenues(city.slug),
@@ -335,9 +404,14 @@ export default async function CityPage({
           currentCity={city.slug}
           hubLinks={[
             {
-              href: "/tonight",
-              label: "Tonight",
-              description: `Fast planning page for ${city.name} and the rest of Thailand.`,
+              href: intentLinks.tonight.href,
+              label: intentLinks.tonight.label,
+              description: intentLinks.tonight.description,
+            },
+            {
+              href: intentLinks.safety.href,
+              label: intentLinks.safety.label,
+              description: intentLinks.safety.description,
             },
             {
               href: "/events",
@@ -395,7 +469,7 @@ export default async function CityPage({
           items={[
             {
               question: `What should I check first in ${city.name}?`,
-              answer: `Start with Tonight if you need a same-night answer. If you are still choosing areas or venue types, browse the main ${city.name} nightlife wall first.`,
+              answer: `Start with ${intentLinks.tonight.label} if you need a same-night answer. If you are still choosing areas or venue types, browse the main ${city.name} nightlife wall first.`,
             },
             {
               question: `How does ThaiNight rank nightlife options in ${city.name}?`,
@@ -410,19 +484,19 @@ export default async function CityPage({
           ]}
           nextSteps={[
             {
-              href: "/tonight",
-              label: `Plan tonight in ${city.name}`,
+              href: intentLinks.tonight.href,
+              label: intentLinks.tonight.label,
               description: `Best next click when you need fast same-night planning after reviewing the ${city.name} guide.`,
+            },
+            {
+              href: intentLinks.safety.href,
+              label: intentLinks.safety.label,
+              description: `Best follow-up when you want the clearest safety, first-timer, or risk-reduction page around ${city.name}.`,
             },
             {
               href: "/events",
               label: "Check approved events",
               description: `Use this after the city guide when you want guest lists, flyers, and nightlife momentum tied to ${city.name}.`,
-            },
-            {
-              href: "/intel",
-              label: "Review warnings and openings",
-              description: `Best follow-up if you want price context, safety notes, and new venue signals around ${city.name}.`,
             },
           ]}
         />

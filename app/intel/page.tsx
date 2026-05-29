@@ -348,14 +348,29 @@ export default async function IntelPage() {
         description="Intel explains why certain venues, events, and offers matter. This section should send readers back into the city guides and the high-intent planning pages instead of trapping them in the library."
         hubLinks={[
           {
+            href: "/bangkok-nightlife-tonight",
+            label: "Bangkok tonight",
+            description: "Best next step when a Bangkok signal should turn into a same-night area and event choice.",
+          },
+          {
+            href: "/pattaya-nightlife-tonight",
+            label: "Pattaya tonight",
+            description: "Use this when Walking Street, Soi Buakhao, or Pattaya pricing signals affect tonight's plan.",
+          },
+          {
+            href: "/phuket-nightlife-tonight",
+            label: "Phuket tonight",
+            description: "A better handoff when Patong, Bangla Road, or beach-club intel changes a Phuket night.",
+          },
+          {
+            href: "/walking-street-pattaya-safety",
+            label: "Walking Street safety",
+            description: "Send tourist-risk and overcharge signals into a dedicated Pattaya safety page instead of leaving them abstract.",
+          },
+          {
             href: "/tonight",
             label: "Tonight",
             description: "Apply opening, warning, and price signals to an immediate nightlife plan.",
-          },
-          {
-            href: "/events",
-            label: "Events",
-            description: "Move from reviewed signals into approved event flyers and party listings.",
           },
           {
             href: "/offers",
@@ -398,14 +413,14 @@ export default async function IntelPage() {
             description: "Best next click when you want to convert warnings, openings, and pricing context into an immediate nightlife route.",
           },
           {
+            href: "/phuket-nightlife-tonight",
+            label: "Use a city-specific tonight page",
+            description: "Better follow-up when the signal clearly belongs to a real city plan instead of a broad Thailand overview.",
+          },
+          {
             href: "/news",
             label: "Read broader nightlife news",
             description: "Good next step if you want more editorial context around the reviewed signals.",
-          },
-          {
-            href: "/phuket",
-            label: "Go back into a city guide",
-            description: "Use a city page when you want to apply nightlife intel to a real neighborhood and venue wall.",
           },
         ]}
       />
