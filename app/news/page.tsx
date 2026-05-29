@@ -95,6 +95,87 @@ function cleanTitle(title: string): string {
   return title.replace(/\s+-\s+[^-]+$/, "").replace(/^["“]|["”]$/g, "").trim();
 }
 
+function searchShapedTitle(item: IntelligenceFeedRow): string {
+  const title = cleanTitle(item.title);
+  const city = cityLabel(item.city);
+  const sourceType = item.venue_type ?? "nightlife_news";
+  const lower = title.toLowerCase();
+
+  if (sourceType === "new_opening") {
+    if (lower.includes("rooftop")) return `${city}: new rooftop bar or nightlife opening to know this week`;
+    if (lower.includes("beach club")) return `${city}: new beach club or nightlife opening travelers may want to check`;
+    if (lower.includes("bar") || lower.includes("club")) return `${city}: new bar and nightlife opening travelers are noticing`;
+    return `${city}: new nightlife opening travelers should know about this week`;
+  }
+
+  if (sourceType === "safety") {
+    if (lower.includes("bangla")) return `Phuket Bangla Road safety update: what travelers should check now`;
+    if (lower.includes("walking street")) return `Walking Street Pattaya safety update: what to check before going out`;
+    if (lower.includes("fee") || lower.includes("overcharge") || lower.includes("price")) {
+      return `${city}: nightlife fee or overcharge warning travelers should see first`;
+    }
+    return `${city}: nightlife safety update travelers should know this week`;
+  }
+
+  if (sourceType === "price") {
+    if (lower.includes("happy hour")) return `${city}: happy hour or nightlife price update worth checking`;
+    if (lower.includes("ticket") || lower.includes("entry")) return `${city}: nightlife ticket or entry-price update travelers should confirm`;
+    return `${city}: nightlife price tip or fee update travelers should know`;
+  }
+
+  if (sourceType === "event") {
+    if (lower.includes("bangkok")) return `Bangkok nightlife event update: what travelers may want to plan around`;
+    if (lower.includes("phuket")) return `Phuket nightlife event update: what travelers may want to plan around`;
+    if (lower.includes("pattaya")) return `Pattaya nightlife event update: what travelers may want to plan around`;
+    return `${city}: nightlife event update for travelers planning this week`;
+  }
+
+  if (sourceType === "offer") {
+    return `${city}: nightlife offer or deal travelers may want to use this week`;
+  }
+
+  if (sourceType === "solo") {
+    return `${city}: nightlife question solo travelers are asking right now`;
+  }
+
+  if (lower.includes("alcohol") || lower.includes("closing time") || lower.includes("law")) {
+    return `Thailand nightlife rules update: what travelers should know this week`;
+  }
+
+  return `${city}: nightlife update travelers should know this week`;
+}
+
+function searchShapedExcerpt(item: IntelligenceFeedRow): string {
+  const city = cityLabel(item.city);
+  const sourceType = item.venue_type ?? "nightlife_news";
+
+  if (sourceType === "new_opening") {
+    return `Use this if you are comparing new nightlife spots in ${city}, deciding whether the opening is real, and figuring out whether it changes where to go this week.`;
+  }
+
+  if (sourceType === "safety") {
+    return `This item matters if you are checking tourist risk, unclear fees, transport, or whether a nightlife area in ${city} needs extra caution before going out.`;
+  }
+
+  if (sourceType === "price") {
+    return `Use this before going out if you want clearer expectations around cover charges, drink prices, entry rules, or nightlife costs in ${city}.`;
+  }
+
+  if (sourceType === "event") {
+    return `This is most useful when you are deciding whether an event in ${city} is worth planning around tonight or this week.`;
+  }
+
+  if (sourceType === "offer") {
+    return `Use this if you want to compare nightlife deals, guest lists, or happy hour style offers in ${city} before making plans.`;
+  }
+
+  if (sourceType === "solo") {
+    return `This question is useful if you are planning ${city} nightlife alone and want a faster sense of areas, expectations, and what to double-check first.`;
+  }
+
+  return `Use this nightlife update as context before you move into city guides, tonight planning, events, or reviewed intel.`;
+}
+
 function NewsCard({ item, featured = false }: { item: IntelligenceFeedRow; featured?: boolean }) {
   const Icon = iconFor(item);
 
@@ -118,10 +199,10 @@ function NewsCard({ item, featured = false }: { item: IntelligenceFeedRow; featu
           </span>
         </div>
         <h2 className={`${featured ? "text-3xl" : "text-xl"} mt-4 line-clamp-3 font-black leading-tight text-white`}>
-          {cleanTitle(item.title)}
+          {searchShapedTitle(item)}
         </h2>
         <p className="mt-4 line-clamp-4 text-sm leading-7 text-zinc-400">
-          {item.body_snippet ?? "Open the source to review the latest Thailand nightlife context before acting on it."}
+          {searchShapedExcerpt(item)}
         </p>
       </div>
       <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
@@ -240,7 +321,7 @@ export default async function NewsPage() {
               <div className="mt-4 space-y-3">
                 {warningItems.map((item) => (
                   <a key={item.id} href={item.url} target="_blank" rel="noreferrer" className="block rounded-2xl border border-red-200/10 bg-black/25 p-4 hover:border-red-200/30">
-                    <p className="line-clamp-2 text-sm font-black text-white">{cleanTitle(item.title)}</p>
+                    <p className="line-clamp-2 text-sm font-black text-white">{searchShapedTitle(item)}</p>
                     <p className="mt-1 text-xs font-bold text-red-100/70">{cityLabel(item.city)} · {sourceLabel(item.url)}</p>
                   </a>
                 ))}
@@ -257,7 +338,7 @@ export default async function NewsPage() {
               <div className="mt-4 space-y-3">
                 {openingItems.map((item) => (
                   <a key={item.id} href={item.url} target="_blank" rel="noreferrer" className="block rounded-2xl border border-cyan-200/10 bg-black/25 p-4 hover:border-cyan-200/30">
-                    <p className="line-clamp-2 text-sm font-black text-white">{cleanTitle(item.title)}</p>
+                    <p className="line-clamp-2 text-sm font-black text-white">{searchShapedTitle(item)}</p>
                     <p className="mt-1 text-xs font-bold text-cyan-100/70">{cityLabel(item.city)} · {sourceLabel(item.url)}</p>
                   </a>
                 ))}
@@ -299,14 +380,29 @@ export default async function NewsPage() {
         description="News builds freshness and authority, but city guides, tonight plans, events, and offers are what turn curiosity into action. These links keep that path obvious for both users and Google."
         hubLinks={[
           {
+            href: "/bangkok-nightlife-tonight",
+            label: "Bangkok tonight",
+            description: "Best next step when a nightlife story should turn into a same-night Bangkok plan.",
+          },
+          {
+            href: "/pattaya-nightlife-tonight",
+            label: "Pattaya tonight",
+            description: "Use this when a Pattaya headline should become an actual nightlife route tonight.",
+          },
+          {
+            href: "/phuket-nightlife-tonight",
+            label: "Phuket tonight",
+            description: "Useful when Phuket nightlife news needs to become a fast Patong or beach-club decision.",
+          },
+          {
+            href: "/walking-street-pattaya-safety",
+            label: "Walking Street safety",
+            description: "Direct follow-up for Pattaya warning stories that should land on a stronger safety page.",
+          },
+          {
             href: "/tonight",
             label: "Tonight",
             description: "Turn nightlife headlines into a same-night plan with warnings and crowd flow.",
-          },
-          {
-            href: "/events",
-            label: "Events",
-            description: "Pair nightlife updates with approved flyers and current event listings.",
           },
           {
             href: "/offers",
@@ -349,14 +445,14 @@ export default async function NewsPage() {
             description: "Best next click when a news item makes you want a quick same-night plan.",
           },
           {
+            href: "/bangkok-nightlife-tonight",
+            label: "Open a city-specific planning page",
+            description: "A stronger next step when the headline clearly belongs to Bangkok, Pattaya, or Phuket trip planning.",
+          },
+          {
             href: "/intel",
             label: "Open the reviewed intel library",
             description: "Use this when you want the cleaner signal layer behind the broader nightlife headlines.",
-          },
-          {
-            href: "/bangkok",
-            label: "Jump back into a city guide",
-            description: "Use a city guide when you want to apply nightlife news to real areas, venues, and local planning.",
           },
         ]}
       />
