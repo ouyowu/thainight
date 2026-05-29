@@ -104,6 +104,7 @@ type SeoIndexingItem = {
 };
 
 type SeoIndexingStatus = "todo" | "submitted" | "review";
+type SeoIndexingFilter = "all" | SeoIndexingStatus;
 
 const MARKETING_PLATFORM_META: Record<MarketingPlatform, {
   label: string;
@@ -170,6 +171,21 @@ const SEO_STATUS_META: Record<SeoIndexingStatus, { label: string; className: str
   review: {
     label: "Review in 7d",
     className: "border-amber-500/20 bg-amber-500/10 text-amber-300",
+  },
+};
+
+const SEO_FILTER_META: Record<SeoIndexingFilter, { label: string }> = {
+  all: {
+    label: "All",
+  },
+  todo: {
+    label: "To submit",
+  },
+  submitted: {
+    label: "Submitted",
+  },
+  review: {
+    label: "Review in 7d",
   },
 };
 
@@ -779,6 +795,7 @@ export default function AdminClient({
   const [verifications, setVerifications] = useState<VerificationRequestItem[]>(initialVerifications);
   const [feedback, setFeedback] = useState<Record<string, "approved" | "rejected" | "error">>({});
   const [seoStatuses, setSeoStatuses] = useState<Record<string, SeoIndexingStatus>>({});
+  const [seoFilter, setSeoFilter] = useState<SeoIndexingFilter>("all");
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -906,6 +923,18 @@ export default function AdminClient({
   const redditReplyQueue = topSignals.filter(isRedditSignal).slice(0, 20);
   const replyQueueSignals = redditReplyQueue.length ? redditReplyQueue : topSignals.slice(0, 20);
   const signalGroups = groupSignals(replyQueueSignals);
+  const seoCounts = SEO_INDEXING_ITEMS.reduce(
+    (counts, item) => {
+      const status = seoStatuses[item.id] ?? "todo";
+      counts[status] += 1;
+      return counts;
+    },
+    { todo: 0, submitted: 0, review: 0 } as Record<SeoIndexingStatus, number>
+  );
+  const filteredSeoItems = SEO_INDEXING_ITEMS.filter((item) => {
+    const status = seoStatuses[item.id] ?? "todo";
+    return seoFilter === "all" ? true : status === seoFilter;
+  });
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
@@ -953,10 +982,10 @@ export default function AdminClient({
             </div>
             <div className="flex flex-wrap gap-2">
               <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
-                {Object.values(seoStatuses).filter((value) => value === "submitted").length} submitted
+                {seoCounts.submitted} submitted
               </span>
               <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
-                {Object.values(seoStatuses).filter((value) => value === "review").length} review
+                {seoCounts.review} review
               </span>
               <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
                 {SEO_INDEXING_ITEMS.length} URLs
@@ -976,8 +1005,36 @@ export default function AdminClient({
             </div>
           </div>
 
+          <div className="mb-4 flex flex-wrap gap-2">
+            {(Object.keys(SEO_FILTER_META) as SeoIndexingFilter[]).map((filterKey) => {
+              const isActive = seoFilter === filterKey;
+              const count =
+                filterKey === "all"
+                  ? SEO_INDEXING_ITEMS.length
+                  : seoCounts[filterKey];
+
+              return (
+                <button
+                  key={filterKey}
+                  type="button"
+                  onClick={() => setSeoFilter(filterKey)}
+                  className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-black transition ${
+                    isActive
+                      ? "border-emerald-400/30 bg-emerald-500/15 text-emerald-200"
+                      : "border-zinc-700 bg-zinc-950 text-zinc-400 hover:border-zinc-500 hover:text-white"
+                  }`}
+                >
+                  <span>{SEO_FILTER_META[filterKey].label}</span>
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] ${isActive ? "bg-emerald-400/20 text-emerald-100" : "bg-zinc-800 text-zinc-400"}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
           <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-            {SEO_INDEXING_ITEMS.map((item) => (
+            {filteredSeoItems.map((item) => (
               <SeoIndexingCard
                 key={item.id}
                 item={item}
