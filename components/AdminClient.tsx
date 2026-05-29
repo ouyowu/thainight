@@ -4,7 +4,7 @@
 // Admin dashboard UI — approve/reject venue_updates in one click
 // Also shows ThaiNight intelligence feed and site stats
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import {
   CheckCircle2, XCircle, Clock, TrendingUp, AlertTriangle,
   ExternalLink, RefreshCw, MessageSquare, Newspaper, ShieldAlert, Archive, Copy,
@@ -103,6 +103,8 @@ type SeoIndexingItem = {
   reason: string;
 };
 
+type SeoIndexingStatus = "todo" | "submitted" | "review";
+
 const MARKETING_PLATFORM_META: Record<MarketingPlatform, {
   label: string;
   icon: typeof Search;
@@ -155,6 +157,23 @@ const SEO_INDEXING_ITEMS: SeoIndexingItem[] = [
   { id: "phuket-prices", label: "Phuket nightlife prices", path: "/phuket-nightlife-prices", keyword: "phuket nightlife prices", reason: "Useful for Patong, beach-club, and transport-cost questions." },
   { id: "bangkok-first-time", label: "Bangkok nightlife first timers", path: "/bangkok-nightlife-first-time", keyword: "bangkok nightlife for first timers", reason: "Strong top-of-funnel page for tourists who still need an easy starting plan." },
 ];
+
+const SEO_STATUS_META: Record<SeoIndexingStatus, { label: string; className: string }> = {
+  todo: {
+    label: "To submit",
+    className: "border-zinc-700 bg-zinc-900 text-zinc-300",
+  },
+  submitted: {
+    label: "Submitted",
+    className: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
+  },
+  review: {
+    label: "Review in 7d",
+    className: "border-amber-500/20 bg-amber-500/10 text-amber-300",
+  },
+};
+
+const SEO_STATUS_STORAGE_KEY = "thainight-seo-indexing-status";
 
 const MARKETING_QUEUE_ITEMS: MarketingQueueItem[] = [
   {
@@ -652,9 +671,18 @@ function searchConsoleInspectUrl(targetUrl: string): string {
   return `https://search.google.com/search-console/inspect?${params.toString()}`;
 }
 
-function SeoIndexingCard({ item }: { item: SeoIndexingItem }) {
+function SeoIndexingCard({
+  item,
+  status,
+  onStatusChange,
+}: {
+  item: SeoIndexingItem;
+  status: SeoIndexingStatus;
+  onStatusChange: (id: string, status: SeoIndexingStatus) => void;
+}) {
   const targetUrl = `https://thainight.co${item.path}`;
   const inspectUrl = searchConsoleInspectUrl(targetUrl);
+  const statusMeta = SEO_STATUS_META[status];
 
   return (
     <article className="rounded-xl border border-zinc-800 bg-zinc-950/70 p-4">
@@ -667,15 +695,20 @@ function SeoIndexingCard({ item }: { item: SeoIndexingItem }) {
           <h3 className="mt-3 text-sm font-black leading-5 text-white">{item.label}</h3>
           <p className="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500">{item.keyword}</p>
         </div>
-        <a
-          href={inspectUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="shrink-0 rounded-full border border-zinc-700 bg-zinc-900 p-2 text-zinc-400 transition hover:border-emerald-300/50 hover:text-emerald-200"
-          title="Open Search Console inspection"
-        >
-          <ExternalLink className="h-3.5 w-3.5" />
-        </a>
+        <div className="flex flex-col items-end gap-2">
+          <span className={`rounded-full border px-2.5 py-1 text-[10px] font-black uppercase tracking-wider ${statusMeta.className}`}>
+            {statusMeta.label}
+          </span>
+          <a
+            href={inspectUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-full border border-zinc-700 bg-zinc-900 p-2 text-zinc-400 transition hover:border-emerald-300/50 hover:text-emerald-200"
+            title="Open Search Console inspection"
+          >
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </div>
 
       <p className="mt-3 text-xs leading-5 text-zinc-500">{item.reason}</p>
@@ -699,6 +732,27 @@ function SeoIndexingCard({ item }: { item: SeoIndexingItem }) {
         >
           <Copy className="h-3 w-3" />
           Copy inspect link
+        </button>
+        <button
+          type="button"
+          onClick={() => onStatusChange(item.id, "todo")}
+          className={`inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[10px] font-black uppercase tracking-wider ${status === "todo" ? "border-zinc-600 bg-zinc-800 text-white" : "border-zinc-700 bg-zinc-900 text-zinc-300"}`}
+        >
+          To submit
+        </button>
+        <button
+          type="button"
+          onClick={() => onStatusChange(item.id, "submitted")}
+          className={`inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[10px] font-black uppercase tracking-wider ${status === "submitted" ? "border-emerald-400/30 bg-emerald-500/15 text-emerald-200" : "border-zinc-700 bg-zinc-900 text-zinc-300"}`}
+        >
+          Submitted
+        </button>
+        <button
+          type="button"
+          onClick={() => onStatusChange(item.id, "review")}
+          className={`inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[10px] font-black uppercase tracking-wider ${status === "review" ? "border-amber-400/30 bg-amber-500/15 text-amber-200" : "border-zinc-700 bg-zinc-900 text-zinc-300"}`}
+        >
+          Review in 7d
         </button>
       </div>
     </article>
@@ -724,7 +778,31 @@ export default function AdminClient({
   const [signalTitles, setSignalTitles] = useState<Record<string, string>>({});
   const [verifications, setVerifications] = useState<VerificationRequestItem[]>(initialVerifications);
   const [feedback, setFeedback] = useState<Record<string, "approved" | "rejected" | "error">>({});
+  const [seoStatuses, setSeoStatuses] = useState<Record<string, SeoIndexingStatus>>({});
   const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(SEO_STATUS_STORAGE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw) as Record<string, SeoIndexingStatus>;
+      setSeoStatuses(parsed);
+    } catch {
+      // Ignore malformed local state and start fresh.
+    }
+  }, []);
+
+  function handleSeoStatusChange(id: string, status: SeoIndexingStatus) {
+    setSeoStatuses((current) => {
+      const next = { ...current, [id]: status };
+      try {
+        window.localStorage.setItem(SEO_STATUS_STORAGE_KEY, JSON.stringify(next));
+      } catch {
+        // Ignore storage failures and keep in-memory state.
+      }
+      return next;
+    });
+  }
 
   async function handleAction(id: string, action: "approve" | "reject") {
     startTransition(async () => {
@@ -875,6 +953,12 @@ export default function AdminClient({
             </div>
             <div className="flex flex-wrap gap-2">
               <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
+                {Object.values(seoStatuses).filter((value) => value === "submitted").length} submitted
+              </span>
+              <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
+                {Object.values(seoStatuses).filter((value) => value === "review").length} review
+              </span>
+              <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
                 {SEO_INDEXING_ITEMS.length} URLs
               </span>
               <button
@@ -894,7 +978,12 @@ export default function AdminClient({
 
           <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
             {SEO_INDEXING_ITEMS.map((item) => (
-              <SeoIndexingCard key={item.id} item={item} />
+              <SeoIndexingCard
+                key={item.id}
+                item={item}
+                status={seoStatuses[item.id] ?? "todo"}
+                onStatusChange={handleSeoStatusChange}
+              />
             ))}
           </div>
         </section>
