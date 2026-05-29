@@ -85,9 +85,9 @@ const CITY_INTENT_LINKS: Record<
       description: "A faster same-night route for Soi 11, Thonglor, RCA, and event timing checks.",
     },
     safety: {
-      href: "/solo-traveler-bangkok-nightlife",
-      label: "Solo traveler Bangkok nightlife",
-      description: "Use this when the night plan is also about confidence, meeting people, and keeping transport simple.",
+      href: "/bangkok-nightlife-safety",
+      label: "Bangkok nightlife safety",
+      description: "The clearest safety, overcharge, transport, and late-night planning page for first-timers in Bangkok.",
     },
   },
   pattaya: {

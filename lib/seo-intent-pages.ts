@@ -10,7 +10,11 @@ export type SeoIntentPageSlug =
   | "phuket-nightlife-tonight"
   | "pattaya-nightlife-tonight"
   | "chiang-mai-nightlife-tonight"
-  | "walking-street-pattaya-safety";
+  | "walking-street-pattaya-safety"
+  | "bangkok-nightlife-safety"
+  | "pattaya-nightlife-prices"
+  | "phuket-nightlife-prices"
+  | "bangkok-nightlife-first-time";
 
 export type SeoIntentPageConfig = {
   slug: SeoIntentPageSlug;
@@ -372,6 +376,145 @@ export const SEO_INTENT_PAGES: SeoIntentPageConfig[] = [
       { label: "Pattaya city page", href: "/pattaya" },
       { label: "Thailand price tips", href: "/thailand-nightlife-price-tips" },
       { label: "Tonight page", href: "/tonight" },
+    ],
+  },
+  {
+    slug: "bangkok-nightlife-safety",
+    keyword: "Bangkok nightlife safety",
+    title: "Bangkok nightlife safety: what travelers should check before a late night out",
+    metaTitle: "Bangkok Nightlife Safety | Prices, Transport & Warnings",
+    metaDescription:
+      "Bangkok nightlife safety tips for travelers: taxis, prices, overcharge signals, area choice, late-night planning, and reviewed ThaiNight warnings.",
+    city: "bangkok",
+    category: "safety",
+    heroLabel: "Safety guide",
+    intro:
+      "Bangkok is one of the easier big cities in Asia for nightlife, but the best nights still come from simple planning. This page focuses on area choice, prices, transport, and the avoidable mistakes travelers make late at night.",
+    primaryCta: { label: "Open Bangkok guide", href: "/bangkok" },
+    secondaryCta: { label: "View warnings", href: "/intel#warnings" },
+    sections: [
+      {
+        title: "Start with the right area",
+        body: "First-timers usually do better in one clear nightlife zone like Soi 11, Thonglor, Silom, or RCA instead of trying to cross Bangkok after midnight without a reason.",
+      },
+      {
+        title: "Price and overcharge checks",
+        body: "Confirm cover charge, final-entry rules, menu pricing, and any minimum spend before you commit. A quick question before ordering is usually enough to avoid the most common mistakes.",
+      },
+      {
+        title: "Transport matters more late",
+        body: "Use Grab or obvious official transport late at night, keep your route back simple, and avoid turning a good night into a long, confused city transfer.",
+      },
+    ],
+    internalLinks: [
+      { label: "Bangkok nightlife tonight", href: "/bangkok-nightlife-tonight" },
+      { label: "Solo traveler Bangkok nightlife", href: "/solo-traveler-bangkok-nightlife" },
+      { label: "Warnings library", href: "/intel#warnings" },
+      { label: "Bangkok city page", href: "/bangkok" },
+    ],
+  },
+  {
+    slug: "pattaya-nightlife-prices",
+    keyword: "Pattaya nightlife prices",
+    title: "Pattaya nightlife prices: what to expect before you go out",
+    metaTitle: "Pattaya Nightlife Prices | Fees, Drinks, Transport & Tips",
+    metaDescription:
+      "Pattaya nightlife price guide for travelers: drinks, entry fees, transport, Walking Street costs, and reviewed ThaiNight price signals.",
+    city: "pattaya",
+    category: "price",
+    heroLabel: "Price guide",
+    intro:
+      "Pattaya can feel affordable until a night gets vague. This page helps travelers understand the price differences between Walking Street, Soi Buakhao, beach clubs, and casual bar nights before they spend too much.",
+    primaryCta: { label: "Open Pattaya guide", href: "/pattaya" },
+    secondaryCta: { label: "View price tips", href: "/intel#price-tips" },
+    sections: [
+      {
+        title: "What changes the price in Pattaya",
+        body: "Street, venue type, music format, and how tourist-focused the area is all change the bill. Walking Street and event-driven nights usually behave differently from casual beer-bar or neighborhood routes.",
+      },
+      {
+        title: "What to confirm first",
+        body: "Check drink prices, cover charge, happy hour timing, and transport before you settle in. Clarity matters more than finding the cheapest number on paper.",
+      },
+      {
+        title: "How to avoid surprise costs",
+        body: "Pick one zone, set a budget early, and treat vague pricing as a warning sign. Pattaya is easiest when you slow the night down and ask before committing.",
+      },
+    ],
+    internalLinks: [
+      { label: "Pattaya nightlife guide", href: "/pattaya-nightlife-guide" },
+      { label: "Pattaya nightlife tonight", href: "/pattaya-nightlife-tonight" },
+      { label: "Walking Street Pattaya safety", href: "/walking-street-pattaya-safety" },
+      { label: "Thailand price tips", href: "/thailand-nightlife-price-tips" },
+    ],
+  },
+  {
+    slug: "phuket-nightlife-prices",
+    keyword: "Phuket nightlife prices",
+    title: "Phuket nightlife prices: beach clubs, Patong, drinks, and what to check first",
+    metaTitle: "Phuket Nightlife Prices | Patong, Beach Clubs & Fees",
+    metaDescription:
+      "Phuket nightlife price guide for travelers: Patong costs, beach club spend, drink prices, event fees, and reviewed ThaiNight price notes.",
+    city: "phuket",
+    category: "price",
+    heroLabel: "Price guide",
+    intro:
+      "Phuket nightlife is not just about drinks. Area distance, beach clubs, event nights, and transport all change the cost. This page helps travelers understand what they are really paying for before going out.",
+    primaryCta: { label: "Open Phuket guide", href: "/phuket" },
+    secondaryCta: { label: "View price tips", href: "/intel#price-tips" },
+    sections: [
+      {
+        title: "Why Phuket prices feel uneven",
+        body: "Patong nightlife, Bangla Road nights, beach clubs, and sunset venues all price differently. Sometimes transport and distance matter as much as the venue bill itself.",
+      },
+      {
+        title: "What to check before you commit",
+        body: "Look at minimum spend, event pricing, entry timing, drink menus, and how expensive the trip back will be once the night ends.",
+      },
+      {
+        title: "How to keep the bill manageable",
+        body: "Stay in one zone, match the venue type to your actual budget, and avoid stacking transport, event fees, and premium drinks into one unplanned night.",
+      },
+    ],
+    internalLinks: [
+      { label: "Phuket nightlife tonight", href: "/phuket-nightlife-tonight" },
+      { label: "Phuket Bangla Road safety", href: "/phuket-bangla-road-safety" },
+      { label: "Phuket city guide", href: "/phuket" },
+      { label: "Thailand price tips", href: "/thailand-nightlife-price-tips" },
+    ],
+  },
+  {
+    slug: "bangkok-nightlife-first-time",
+    keyword: "Bangkok nightlife for first timers",
+    title: "Bangkok nightlife for first timers: best areas, easiest plans, and what not to overthink",
+    metaTitle: "Bangkok Nightlife for First Timers | Areas, Prices & Tips",
+    metaDescription:
+      "Bangkok nightlife guide for first timers: best areas to start, how to plan the night, what to spend, and what to check before going out.",
+    city: "bangkok",
+    heroLabel: "First-timer guide",
+    intro:
+      "The best first Bangkok nightlife plan is usually the simplest one. This page is for travelers who want to know where to start, what each area feels like, and what to double-check before they go out.",
+    primaryCta: { label: "Open Bangkok guide", href: "/bangkok" },
+    secondaryCta: { label: "Plan tonight", href: "/bangkok-nightlife-tonight" },
+    sections: [
+      {
+        title: "Best Bangkok areas for a first night",
+        body: "Soi 11 is easy and convenient, Thonglor feels more polished, Silom gives you a wider mix, and RCA makes more sense when you specifically want clubs. Pick one, not all four.",
+      },
+      {
+        title: "What first-timers should check",
+        body: "Look at dress code, cover charge, transport back, and whether you actually want bars, rooftops, or clubs. Most bad first nights come from trying to do too much at once.",
+      },
+      {
+        title: "What not to overthink",
+        body: "You do not need a perfect route across the whole city. One strong area, one backup venue, and one clear plan home is enough for a much better first night.",
+      },
+    ],
+    internalLinks: [
+      { label: "Bangkok nightlife tonight", href: "/bangkok-nightlife-tonight" },
+      { label: "Bangkok nightlife safety", href: "/bangkok-nightlife-safety" },
+      { label: "Bangkok rooftop bars", href: "/bangkok/rooftop-bars" },
+      { label: "Bangkok city page", href: "/bangkok" },
     ],
   },
 ];
