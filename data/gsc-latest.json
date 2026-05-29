@@ -1,47 +1,210 @@
 {
-  "generated_at": "2026-05-15T12:46:00.424Z",
+  "generated_at": "2026-05-29T07:31:33.932Z",
   "site": "sc-domain:thainight.co",
   "range": {
-    "start_date": "2026-05-02",
-    "end_date": "2026-05-15",
+    "start_date": "2026-05-16",
+    "end_date": "2026-05-29",
     "days": 14
   },
   "trend_range": {
-    "start_date": "2026-04-18",
-    "end_date": "2026-05-15",
+    "start_date": "2026-05-02",
+    "end_date": "2026-05-29",
     "days": 28
   },
   "performance": {
-    "top_queries": [],
+    "top_queries": [
+      {
+        "keys": [
+          "bangkoktonight"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "keys": [
+          "night in thailand"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 28.5
+      },
+      {
+        "keys": [
+          "night thailand"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 36.5
+      },
+      {
+        "keys": [
+          "nightlife thailand"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 50
+      },
+      {
+        "keys": [
+          "tainight"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "thai night"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "keys": [
+          "thai night club"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "keys": [
+          "thailand night"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 50
+      },
+      {
+        "keys": [
+          "thailand nights"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 26.666666666666668
+      },
+      {
+        "keys": [
+          "thainight"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8.333333333333332
+      }
+    ],
     "top_pages": [
       {
         "keys": [
           "http://thainight.co/"
         ],
         "clicks": 0,
-        "impressions": 2,
+        "impressions": 5,
         "ctr": 0,
-        "position": 8.5
+        "position": 30.6
+      },
+      {
+        "keys": [
+          "https://thainight.co/"
+        ],
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0,
+        "position": 21.5
       }
     ],
     "by_country": [
       {
         "keys": [
-          "sgp"
+          "can"
         ],
         "clicks": 0,
         "impressions": 1,
         "ctr": 0,
-        "position": 9
+        "position": 21
+      },
+      {
+        "keys": [
+          "deu"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 52.5
+      },
+      {
+        "keys": [
+          "fra"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "gbr"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 47.5
+      },
+      {
+        "keys": [
+          "ind"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 29
+      },
+      {
+        "keys": [
+          "phl"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "keys": [
+          "pri"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
       },
       {
         "keys": [
           "tha"
         ],
         "clicks": 0,
-        "impressions": 1,
+        "impressions": 10,
         "ctr": 0,
-        "position": 8
+        "position": 11.4
+      },
+      {
+        "keys": [
+          "usa"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 11.8
       }
     ],
     "by_device": [
@@ -50,9 +213,18 @@
           "DESKTOP"
         ],
         "clicks": 0,
-        "impressions": 2,
+        "impressions": 19,
         "ctr": 0,
-        "position": 8.5
+        "position": 31.105263157894736
+      },
+      {
+        "keys": [
+          "MOBILE"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 7.8
       }
     ],
     "daily_trend": [
@@ -73,6 +245,132 @@
         "impressions": 2,
         "ctr": 0,
         "position": 8.5
+      },
+      {
+        "keys": [
+          "2026-05-14"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 14.857142857142858
+      },
+      {
+        "keys": [
+          "2026-05-15"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 17.571428571428573
+      },
+      {
+        "keys": [
+          "2026-05-16"
+        ],
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 12.11111111111111
+      },
+      {
+        "keys": [
+          "2026-05-17"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 20
+      },
+      {
+        "keys": [
+          "2026-05-18"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 45.333333333333336
+      },
+      {
+        "keys": [
+          "2026-05-19"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 53.5
+      },
+      {
+        "keys": [
+          "2026-05-20"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 42.5
+      },
+      {
+        "keys": [
+          "2026-05-21"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-05-22"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-05-23"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "keys": [
+          "2026-05-24"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "2026-05-25"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+      },
+      {
+        "keys": [
+          "2026-05-26"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.666666666666666
+      },
+      {
+        "keys": [
+          "2026-05-27"
+        ],
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
       }
     ]
   },
@@ -83,13 +381,13 @@
       "isPending": false,
       "isSitemapsIndex": false,
       "type": "sitemap",
-      "lastDownloaded": "2026-05-14T20:15:29.572Z",
+      "lastDownloaded": "2026-05-15T21:57:08.476Z",
       "warnings": "0",
       "errors": "0",
       "contents": [
         {
           "type": "web",
-          "submitted": "1066",
+          "submitted": "1075",
           "indexed": "0"
         }
       ]
@@ -102,8 +400,8 @@
   "weekly_change": {
     "period_days": 7,
     "data_points": {
-      "recent": 2,
-      "previous": 0
+      "recent": 7,
+      "previous": 7
     },
     "clicks": {
       "recent": 0,
@@ -112,16 +410,16 @@
       "delta_pct": 0
     },
     "impressions": {
-      "recent": 2,
-      "previous": 0,
-      "delta": 2,
-      "delta_pct": null
+      "recent": 7,
+      "previous": 36,
+      "delta": -29,
+      "delta_pct": -80.55555555555556
     },
     "avg_position": {
-      "recent": 8.5,
-      "previous": 0,
-      "delta": 8.5,
-      "delta_pct": null,
+      "recent": 16,
+      "previous": 21.77777777777778,
+      "delta": -5.777777777777779,
+      "delta_pct": -26.53061224489796,
       "note": "Lower average position is better."
     }
   }

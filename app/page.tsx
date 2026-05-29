@@ -245,6 +245,28 @@ export default async function HomePage() {
       <PriorityNetworkLinks
         title="Start with a city, then follow the highest-intent nightlife sections"
         description="For early indexing and easier browsing, ThaiNight keeps a clear spine between the homepage, four city guides, and the sections travelers use most often before going out."
+        hubLinks={[
+          {
+            href: "/bangkok-nightlife-tonight",
+            label: "Bangkok nightlife tonight",
+            description: "Fast same-night planning for Soi 11, Thonglor, RCA, and nearby event flow.",
+          },
+          {
+            href: "/phuket-nightlife-tonight",
+            label: "Phuket nightlife tonight",
+            description: "Use Patong, beach-club, and transport checks to plan a simpler Phuket night.",
+          },
+          {
+            href: "/pattaya-nightlife-tonight",
+            label: "Pattaya nightlife tonight",
+            description: "Compare Walking Street, Soi Buakhao, and likely prices before you head out.",
+          },
+          {
+            href: "/chiang-mai-nightlife-tonight",
+            label: "Chiang Mai nightlife tonight",
+            description: "A lower-stress nightlife planner for Nimman, Old City, and live-music nights.",
+          },
+        ]}
       />
 
       <PriorityFaq

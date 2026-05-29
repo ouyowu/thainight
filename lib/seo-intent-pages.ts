@@ -6,7 +6,11 @@ export type SeoIntentPageSlug =
   | "phuket-bangla-road-safety"
   | "bangkok-rooftop-bars-2026"
   | "thailand-nightlife-price-tips"
-  | "solo-traveler-bangkok-nightlife";
+  | "solo-traveler-bangkok-nightlife"
+  | "phuket-nightlife-tonight"
+  | "pattaya-nightlife-tonight"
+  | "chiang-mai-nightlife-tonight"
+  | "walking-street-pattaya-safety";
 
 export type SeoIntentPageConfig = {
   slug: SeoIntentPageSlug;
@@ -231,6 +235,143 @@ export const SEO_INTENT_PAGES: SeoIntentPageConfig[] = [
       { label: "Bangkok nightlife tonight", href: "/bangkok-nightlife-tonight" },
       { label: "Bangkok bars", href: "/bangkok/bars" },
       { label: "Warnings", href: "/intel#warnings" },
+    ],
+  },
+  {
+    slug: "phuket-nightlife-tonight",
+    keyword: "Phuket nightlife tonight",
+    title: "Phuket nightlife tonight: best areas, event checks, and how to keep the night simple",
+    metaTitle: "Phuket Nightlife Tonight | Patong, Events, Prices & Safety",
+    metaDescription:
+      "Plan Phuket nightlife tonight with Patong and beach-club options, current events, price checks, transport basics, and reviewed ThaiNight safety notes.",
+    city: "phuket",
+    heroLabel: "Tonight planner",
+    intro:
+      "Use this page when you want a same-night Phuket plan without overcomplicating it. Start with one nightlife zone, confirm event and transport details, and keep a simple route back.",
+    primaryCta: { label: "See tonight page", href: "/tonight" },
+    secondaryCta: { label: "Open Phuket guide", href: "/phuket" },
+    sections: [
+      {
+        title: "Where to start in Phuket tonight",
+        body: "Patong is still the obvious nightlife base for first-timers because venues, transport, and foot traffic are easier to understand. Beach clubs and quieter bars make more sense when you already know the area you want.",
+      },
+      {
+        title: "What to check before going out",
+        body: "Look at event timing, minimum spend, final-entry rules, and your ride back before you leave. Phuket nights get harder once you are moving between areas without a plan.",
+      },
+      {
+        title: "Best approach for a simple night",
+        body: "Pick one zone, one backup venue, and one clear way home. That keeps the night easy whether you are solo, on a couple's trip, or just trying to avoid tourist confusion.",
+      },
+    ],
+    internalLinks: [
+      { label: "Phuket city guide", href: "/phuket" },
+      { label: "Bangla Road safety", href: "/phuket-bangla-road-safety" },
+      { label: "Thailand events", href: "/events" },
+      { label: "ThaiNight intel", href: "/intel" },
+    ],
+  },
+  {
+    slug: "pattaya-nightlife-tonight",
+    keyword: "Pattaya nightlife tonight",
+    title: "Pattaya nightlife tonight: where to go, what to spend, and what to double-check first",
+    metaTitle: "Pattaya Nightlife Tonight | Areas, Prices, Events & Tips",
+    metaDescription:
+      "Plan Pattaya nightlife tonight with Walking Street, Soi Buakhao, current events, price checks, solo-traveler basics, and reviewed ThaiNight warnings.",
+    city: "pattaya",
+    heroLabel: "Tonight planner",
+    intro:
+      "This page is for travelers who want a practical Pattaya plan tonight. Compare the main nightlife zones, check likely costs, and avoid making the night harder than it needs to be.",
+    primaryCta: { label: "See tonight page", href: "/tonight" },
+    secondaryCta: { label: "Open Pattaya guide", href: "/pattaya" },
+    sections: [
+      {
+        title: "Best Pattaya areas tonight",
+        body: "Walking Street suits first-timers who want the obvious main strip, Soi Buakhao feels more everyday and bar-heavy, and Jomtien is calmer if you want less intensity.",
+      },
+      {
+        title: "Price and transport checks",
+        body: "Before you settle anywhere, confirm drink prices, cover charges where relevant, and how you are getting back. Pattaya is easier when you decide your transport early instead of late at night.",
+      },
+      {
+        title: "How to keep the night simple",
+        body: "Choose one main zone, set a budget, and ignore vague last-minute offers. The strongest Pattaya nights usually come from clarity, not hopping too much.",
+      },
+    ],
+    internalLinks: [
+      { label: "Pattaya nightlife guide", href: "/pattaya-nightlife-guide" },
+      { label: "Pattaya city page", href: "/pattaya" },
+      { label: "Thailand price tips", href: "/thailand-nightlife-price-tips" },
+      { label: "Warnings library", href: "/intel#warnings" },
+    ],
+  },
+  {
+    slug: "chiang-mai-nightlife-tonight",
+    keyword: "Chiang Mai nightlife tonight",
+    title: "Chiang Mai nightlife tonight: nimman bars, live music, and a low-stress night plan",
+    metaTitle: "Chiang Mai Nightlife Tonight | Bars, Live Music & Tips",
+    metaDescription:
+      "Plan Chiang Mai nightlife tonight with Nimman, Old City, live music spots, simple transport planning, and reviewed ThaiNight warnings and offers.",
+    city: "chiang-mai",
+    heroLabel: "Tonight planner",
+    intro:
+      "Chiang Mai nightlife works best when you keep expectations realistic and the route simple. This page helps you choose the right zone and avoid wasting the night on scattered plans.",
+    primaryCta: { label: "See tonight page", href: "/tonight" },
+    secondaryCta: { label: "Open Chiang Mai guide", href: "/chiang-mai" },
+    sections: [
+      {
+        title: "Best areas to start tonight",
+        body: "Nimman is the easiest nightlife base for polished bars and easy movement, while Old City and riverside spots work better for slower nights, live music, and lower-pressure plans.",
+      },
+      {
+        title: "What to check before you go",
+        body: "Look at venue hours, live-music schedules, and how far your next stop really is. Chiang Mai nightlife is not about covering the whole city in one night.",
+      },
+      {
+        title: "A better Chiang Mai night plan",
+        body: "Pick one area, one live venue or bar you actually want, and one backup. That is usually enough for a fun night without turning it into a transport problem.",
+      },
+    ],
+    internalLinks: [
+      { label: "Chiang Mai city page", href: "/chiang-mai" },
+      { label: "Nimman bars", href: "/chiang-mai/bars/nimman" },
+      { label: "Live music venues", href: "/chiang-mai/live-music" },
+      { label: "Tonight in Thailand", href: "/tonight" },
+    ],
+  },
+  {
+    slug: "walking-street-pattaya-safety",
+    keyword: "Walking Street Pattaya safety",
+    title: "Walking Street Pattaya safety: how to enjoy the area without making avoidable mistakes",
+    metaTitle: "Walking Street Pattaya Safety | Prices, Transport & Warnings",
+    metaDescription:
+      "Walking Street Pattaya safety tips for tourists: prices, transport, solo traveler basics, late-night planning, and reviewed ThaiNight warning signals.",
+    city: "pattaya",
+    category: "safety",
+    heroLabel: "Safety guide",
+    intro:
+      "Walking Street is the easiest Pattaya nightlife landmark to understand, but it still rewards simple planning. This page focuses on prices, transport, crowds, and basic tourist judgment.",
+    primaryCta: { label: "Open Pattaya guide", href: "/pattaya" },
+    secondaryCta: { label: "View warnings", href: "/intel#warnings" },
+    sections: [
+      {
+        title: "Basic Walking Street safety",
+        body: "Stay in the busiest visible areas, keep transport simple, and avoid handing control of the night to anyone whose pricing or pitch is unclear from the start.",
+      },
+      {
+        title: "Price and venue checks",
+        body: "Confirm drink costs, entry expectations, and any venue-specific rules before you settle in. Walking Street is easier when you ask first instead of guessing.",
+      },
+      {
+        title: "Solo traveler and late-night planning",
+        body: "If you are alone, keep the route short, set a rough budget, and know your way back before it gets late. Safety improves a lot when the exit plan is already decided.",
+      },
+    ],
+    internalLinks: [
+      { label: "Pattaya nightlife guide", href: "/pattaya-nightlife-guide" },
+      { label: "Pattaya city page", href: "/pattaya" },
+      { label: "Thailand price tips", href: "/thailand-nightlife-price-tips" },
+      { label: "Tonight page", href: "/tonight" },
     ],
   },
 ];

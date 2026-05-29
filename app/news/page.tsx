@@ -281,8 +281,11 @@ export default async function NewsPage() {
             ["/intel", "Intel"],
             ["/events", "Events"],
             ["/offers", "Offers"],
+            ["/phuket-nightlife-tonight", "Phuket tonight"],
+            ["/pattaya-nightlife-tonight", "Pattaya tonight"],
             ["/phuket-bangla-road-safety", "Bangla Road safety"],
             ["/pattaya-nightlife-guide", "Pattaya guide"],
+            ["/walking-street-pattaya-safety", "Walking Street safety"],
           ].map(([href, label]) => (
             <Link key={href} href={href} className="rounded-full border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm font-black text-zinc-100 hover:border-rose-300/35">
               {label}
