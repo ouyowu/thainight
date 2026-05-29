@@ -95,6 +95,14 @@ type MarketingQueueItem = {
   draft: string;
 };
 
+type SeoIndexingItem = {
+  id: string;
+  label: string;
+  path: string;
+  keyword: string;
+  reason: string;
+};
+
 const MARKETING_PLATFORM_META: Record<MarketingPlatform, {
   label: string;
   icon: typeof Search;
@@ -132,6 +140,22 @@ const MARKETING_PLATFORM_META: Record<MarketingPlatform, {
   },
 };
 
+const SEARCH_CONSOLE_RESOURCE = "sc-domain:thainight.co";
+
+const SEO_INDEXING_ITEMS: SeoIndexingItem[] = [
+  { id: "bangkok-tonight", label: "Bangkok nightlife tonight", path: "/bangkok-nightlife-tonight", keyword: "bangkok nightlife tonight", reason: "Strong same-night city intent with clear nightlife planning wording." },
+  { id: "pattaya-guide", label: "Pattaya nightlife guide", path: "/pattaya-nightlife-guide", keyword: "pattaya nightlife guide", reason: "Broad Pattaya planning page with strong city-level search fit." },
+  { id: "phuket-bangla-safety", label: "Phuket Bangla Road safety", path: "/phuket-bangla-road-safety", keyword: "phuket bangla road safety", reason: "High-trust tourist safety query with obvious Phuket nightlife relevance." },
+  { id: "phuket-tonight", label: "Phuket nightlife tonight", path: "/phuket-nightlife-tonight", keyword: "phuket nightlife tonight", reason: "Same-night Phuket page aligned with ThaiNight’s core traveler use case." },
+  { id: "pattaya-tonight", label: "Pattaya nightlife tonight", path: "/pattaya-nightlife-tonight", keyword: "pattaya nightlife tonight", reason: "Urgent city-planning page for tourists deciding where to go tonight." },
+  { id: "chiangmai-tonight", label: "Chiang Mai nightlife tonight", path: "/chiang-mai-nightlife-tonight", keyword: "chiang mai nightlife tonight", reason: "Lower-competition tonight query that still fits real traveler behavior." },
+  { id: "walking-street-safety", label: "Walking Street Pattaya safety", path: "/walking-street-pattaya-safety", keyword: "walking street pattaya safety", reason: "Specific area-risk page tied to one of Pattaya’s best-known nightlife zones." },
+  { id: "bangkok-safety", label: "Bangkok nightlife safety", path: "/bangkok-nightlife-safety", keyword: "bangkok nightlife safety", reason: "Good fit for overcharge, transport, and cautious-first-night searches." },
+  { id: "pattaya-prices", label: "Pattaya nightlife prices", path: "/pattaya-nightlife-prices", keyword: "pattaya nightlife prices", reason: "Money-intent query that matches reviewed nightlife price positioning." },
+  { id: "phuket-prices", label: "Phuket nightlife prices", path: "/phuket-nightlife-prices", keyword: "phuket nightlife prices", reason: "Useful for Patong, beach-club, and transport-cost questions." },
+  { id: "bangkok-first-time", label: "Bangkok nightlife first timers", path: "/bangkok-nightlife-first-time", keyword: "bangkok nightlife for first timers", reason: "Strong top-of-funnel page for tourists who still need an easy starting plan." },
+];
+
 const MARKETING_QUEUE_ITEMS: MarketingQueueItem[] = [
   {
     id: "quora-bangkok-nightlife-safe",
@@ -165,17 +189,6 @@ const MARKETING_QUEUE_ITEMS: MarketingQueueItem[] = [
     suggestedAction: "Reply to 1-2 live questions without sounding like an ad.",
     draft:
       "If you’re going out tonight, I’d pick one area first rather than jumping around. Check event times, cover charges, and recent comments before you go. I’m collecting current Thailand nightlife notes here: https://thainight.co/tonight",
-  },
-  {
-    id: "google-index-six-pages",
-    platform: "google",
-    title: "Request indexing for the 6 new SEO pages",
-    intent: "Search Console task; fastest way to help Google discover the new pages.",
-    searchUrl: "https://search.google.com/search-console",
-    targetUrl: "https://thainight.co/bangkok-nightlife-tonight",
-    suggestedAction: "Open Search Console URL Inspection and request indexing for the 6 new SEO URLs.",
-    draft:
-      "Submit these URLs: /bangkok-nightlife-tonight, /pattaya-nightlife-guide, /phuket-bangla-road-safety, /bangkok-rooftop-bars-2026, /thailand-nightlife-price-tips, /solo-traveler-bangkok-nightlife",
   },
   {
     id: "pinterest-bangkok-nightlife-map",
@@ -631,6 +644,67 @@ function MarketingQueueCard({ item }: { item: MarketingQueueItem }) {
   );
 }
 
+function searchConsoleInspectUrl(targetUrl: string): string {
+  const params = new URLSearchParams({
+    resource_id: SEARCH_CONSOLE_RESOURCE,
+    id: targetUrl,
+  });
+  return `https://search.google.com/search-console/inspect?${params.toString()}`;
+}
+
+function SeoIndexingCard({ item }: { item: SeoIndexingItem }) {
+  const targetUrl = `https://thainight.co${item.path}`;
+  const inspectUrl = searchConsoleInspectUrl(targetUrl);
+
+  return (
+    <article className="rounded-xl border border-zinc-800 bg-zinc-950/70 p-4">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-wider text-emerald-200">
+            <Globe2 className="h-3.5 w-3.5" />
+            SEO / Indexing
+          </span>
+          <h3 className="mt-3 text-sm font-black leading-5 text-white">{item.label}</h3>
+          <p className="mt-2 text-[11px] font-bold uppercase tracking-wider text-zinc-500">{item.keyword}</p>
+        </div>
+        <a
+          href={inspectUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="shrink-0 rounded-full border border-zinc-700 bg-zinc-900 p-2 text-zinc-400 transition hover:border-emerald-300/50 hover:text-emerald-200"
+          title="Open Search Console inspection"
+        >
+          <ExternalLink className="h-3.5 w-3.5" />
+        </a>
+      </div>
+
+      <p className="mt-3 text-xs leading-5 text-zinc-500">{item.reason}</p>
+      <p className="mt-2 rounded-lg border border-zinc-800 bg-zinc-900/70 p-2 text-xs leading-5 text-zinc-400">
+        URL: {targetUrl}
+      </p>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => navigator.clipboard?.writeText(targetUrl)}
+          className="inline-flex items-center gap-1 rounded-md border border-emerald-500/20 bg-emerald-500/10 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-emerald-300"
+        >
+          <Copy className="h-3 w-3" />
+          Copy URL
+        </button>
+        <button
+          type="button"
+          onClick={() => navigator.clipboard?.writeText(inspectUrl)}
+          className="inline-flex items-center gap-1 rounded-md border border-zinc-700 bg-zinc-900 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-zinc-300"
+        >
+          <Copy className="h-3 w-3" />
+          Copy inspect link
+        </button>
+      </div>
+    </article>
+  );
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 export default function AdminClient({
@@ -789,6 +863,41 @@ export default function AdminClient({
             </div>
           ))}
         </div>
+
+        <section className="rounded-2xl border border-zinc-800 bg-zinc-900/45 p-5">
+          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-400">SEO Queue</p>
+              <h2 className="mt-1 text-xl font-black text-white">Pages to request in Google Search Console</h2>
+              <p className="mt-1 max-w-3xl text-sm leading-6 text-zinc-500">
+                Open the inspection page, wait for the result, then request indexing. Start with tonight, safety, and price pages before spending time on smaller content.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs font-bold text-zinc-400">
+                {SEO_INDEXING_ITEMS.length} URLs
+              </span>
+              <button
+                type="button"
+                onClick={() =>
+                  navigator.clipboard?.writeText(
+                    SEO_INDEXING_ITEMS.map((item) => `https://thainight.co${item.path}`).join("\n")
+                  )
+                }
+                className="inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-300"
+              >
+                <Copy className="h-3 w-3" />
+                Copy all URLs
+              </button>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+            {SEO_INDEXING_ITEMS.map((item) => (
+              <SeoIndexingCard key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
 
         <section className="rounded-2xl border border-zinc-800 bg-zinc-900/45 p-5">
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
